@@ -1,4 +1,5 @@
 import os
+from collections import defaultdict
 class Person(object):
     def __init__(self,first_name,last_name):
         self.first_name = first_name
@@ -32,3 +33,8 @@ if __name__=='__main__':
 	for per in a2:
 	  d.setdefault(per.first_name,[]).append(per)
 	print 'dict setdefault: %s' % d
+	
+	d = defaultdict(list)
+	map(lambda per:d[per.first_name].append(per), a1)
+	map(lambda per:d[per.first_name].append(per), a2)
+	print 'defaultdict map: %s' % d	
