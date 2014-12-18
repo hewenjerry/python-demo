@@ -61,7 +61,6 @@ class ConfParse(object):
             whole_line = ""
             for line in f:
                 line = line.strip()
-                print "line=%s" % line
                 if line.endswith("\\"): # wrap lines
                     whole_line += line[:-1]
                     continue
@@ -149,5 +148,3 @@ if __name__ == '__main__':
     options = conf.get_all()
     for key in options:
         print key, options[key]
-
-    print string2list("byte:dance:com:mail",":")
